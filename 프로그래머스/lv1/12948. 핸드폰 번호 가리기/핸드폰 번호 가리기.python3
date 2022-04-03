@@ -1,0 +1,5 @@
+def solution(phone_number):
+    stars = '*' * len(phone_number[:-4])
+    nums = phone_number[-4:]
+    answer = stars+nums
+    return answer
