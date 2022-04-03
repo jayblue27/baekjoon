@@ -1,0 +1,9 @@
+#입력
+n, m = map(int, input().split())
+
+#가로
+tmp_n = '*' * n
+
+#세로
+for m in range(m):
+    print(tmp_n)
