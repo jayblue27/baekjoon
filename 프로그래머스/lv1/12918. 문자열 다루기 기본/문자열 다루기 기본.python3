@@ -1,0 +1,9 @@
+#isnumeric() 실패
+#isdigit() 실패
+#문자열 길이 체크 안해서 에러
+# len(s)
+def solution(s):
+    if (len(s) == 4 or len(s) == 6) and s.isdigit():
+        return True
+    else:
+        return False
