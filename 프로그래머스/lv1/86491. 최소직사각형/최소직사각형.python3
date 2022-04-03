@@ -1,0 +1,11 @@
+def solution(sizes):
+    tmp_x = [] # x 리스트
+    tmp_y = [] # y 리스트
+    for xy in sizes: # sizes 순회
+        xy.sort()  # 세로로 된 명함의 경우 가로로 눞히면 가로 명함과 같아지니까 한 방향으로 정렬
+        tmp_x.append(xy[0]) # x값 리스트
+        tmp_y.append(xy[1]) # y값 리스트
+        
+    answer = max(tmp_x) * max(tmp_y)  # 각 리스트의 최댓값 추출하여 크기(곱셉) 계산
+
+    return answer
