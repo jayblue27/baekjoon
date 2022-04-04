@@ -1,0 +1,18 @@
+# 하샤드 수
+
+# 자릿 합으로 해당 수를 나눠서 떨어지면 하샤드 수
+
+# 입력 숫자
+# x : 1이상 10000 이하인 정수
+
+
+def solution(x):    
+    sub_sum = 0
+    for i in str(x):
+        sub_sum += int(i)
+
+    if x % sub_sum == 0:
+        return True
+
+    else:
+        return False
