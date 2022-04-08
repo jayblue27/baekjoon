@@ -1,0 +1,13 @@
+# 놀이기구 원래 이용료 price
+# N번째 사용하면 N배의 이용료를 받기로 하였음
+# count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지 return
+# 부족하지 않으면 
+def solution(price, money, count):
+    for i in range(1, count+1):
+        money -= (price*i)
+    
+    if money > 0:
+        return 0
+    else:
+        return abs(money)
+    
