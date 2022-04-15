@@ -1,0 +1,21 @@
+def solution(n, lost, reserve):
+    #정렬 안된 케이스가 있다함 ㅡㅠㅡ
+    lost.sort()
+    reserve.sort()
+    # 여벌체육복 있는 사람이 도난당하면 빌려줄 수 없음 -> reserve 목록과 lost 목록에서 지움        
+    # 반복문으로 순회하면서 remove를 하니까 생략되는 케이스들이 발생함
+    new_lost = list(set(lost) - set(reserve))    
+    new_reserve = list(set(reserve)-set(lost))
+    
+    
+    # 번호차이가 1일 경우만 빌려줄 수 있음
+    # 체육복을 빌렸을 경우 lost 목록에서 지움
+    # lost를 돌며
+    for i in new_reserve:
+        for j in new_lost:
+            if abs(i-j) == 1:                
+                new_lost.remove(j)
+                
+    
+    answer = n - len(new_lost)
+    return answer
