@@ -14,8 +14,9 @@ idx = 0
 # N명의 사람이 제거될 때까지 계속 
 for _ in range(N):
     idx += K-1
-    # 리스트의 길이가 K
+    # 리스트의 길이가 index number보다 작거나 같으면
     if idx >= len(lst):
+        # 인덱스 번호를 길이만큼 나눈 나머지로 변경해준다.
         idx = idx%len(lst)
     #출력형태에 맞추기 위해서 str로 입력 받음
     ans.append(str(lst.pop(idx)))
