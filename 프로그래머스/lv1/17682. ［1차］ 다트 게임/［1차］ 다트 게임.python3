@@ -1,0 +1,40 @@
+# 프로그래머스 - 다트 게임
+def solution(dartResult):
+    '''
+    1. 숫자일 경우 계속 입력 받고
+    2. S, D, T 받을 경우 해당 커맨드에 맞게 계산
+    3. *, # 일경우 계산
+
+    키워드 isnumeric()
+    '''
+    n = ''
+    score = []
+    for i in dartResult:
+        if i.isnumeric():
+            n += i
+        elif i == 'S':
+            n = int(n)**1
+            score.append(n)
+            n = ''
+        elif i == 'D':
+            n = int(n)**2
+            score.append(n)
+            n = ''
+        elif i == 'T':
+            n = int(n)**3
+            score.append(n)
+            n = ''
+        elif i == '*':
+            if len(score) > 1:
+                score[-2] = score[-2] * 2
+                score[-1] = score[-1] * 2
+            else:
+                score[-1] = score[-1] * 2
+        elif i == '#':
+            score[-1] = score[-1] * -1
+        
+    return sum(score)
+
+# case 1
+dartResult = '1S2D*3T'
+solution(dartResult)
