@@ -1,0 +1,22 @@
+# 프로그래머스 - 오픈채팅방
+def solution(record):    
+    answer = []
+    사용자DB = {}
+    커맨드 = [] # "Enter", "Leave", "Change"
+    
+    for event in record:
+        info = event.split() # 액션 uid [닉네임]
+        액션, id = info[0], info[1]
+        if 액션 in ("Enter", "Change"):
+            닉네임 = info[2]
+            사용자DB[id] = 닉네임
+        커맨드.append((액션, id))
+        
+    for actionInfo in 커맨드:
+        액션, id = actionInfo[0], actionInfo[1]
+        if 액션 == 'Enter':
+            answer.append(f'{사용자DB[id]}님이 들어왔습니다.')
+        elif 액션 == 'Leave':
+            answer.append(f'{사용자DB[id]}님이 나갔습니다.')
+    
+    return answer
