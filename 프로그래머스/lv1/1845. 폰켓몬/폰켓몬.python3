@@ -1,0 +1,18 @@
+# 프로그래머스 - 폰켓몬 
+from collections import Counter
+
+def solution(nums):
+    '''
+    가장 많은 종류의 폰켓몬을 선택하는 방법
+    1. N/2 개를 가지고 싶지만
+    2. 만약 종류가 2개면 2를 반환
+    '''
+    tmp_lst = Counter(nums)
+    
+    hope = len(nums)//2
+    kinds = len(tmp_lst)
+
+    if kinds < hope:
+        return kinds
+    else:
+        return hope
