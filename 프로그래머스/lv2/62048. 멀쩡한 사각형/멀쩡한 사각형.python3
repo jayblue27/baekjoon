@@ -1,0 +1,11 @@
+# 프로그래머스 - 멀쩡한 사각형
+import math
+def solution(w,h):
+    '''
+    math.gcd() : 최대공약수 구하기
+    '''            
+    answer = w*h - (w+h-math.gcd(w,h))
+    return answer
+
+W, H = 2, 3
+solution(W,H)
