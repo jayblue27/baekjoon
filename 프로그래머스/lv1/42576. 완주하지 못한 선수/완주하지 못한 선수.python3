@@ -1,0 +1,24 @@
+from collections import Counter
+def solution(participant, completion):
+    '''
+    1. 참가자 리스트 counter 라이브러리로 dict 만들고
+    2. completion에 있을경우 value 값을 1씩 까고
+    3. value에 값이 남아있는 경우를 key값을 출력
+    * completion의 길이는 participant길이보다 1작기 때문에 예외 걱정 x
+      만약 미완주자가 2명 이상이였으면 리스트로 반환했을 것임
+    '''
+    # 1. counter dict 생성
+    participant_cnt = Counter(participant)
+    
+    # 2. completion 순회 후 
+    for person in completion:
+        if participant_cnt[person] != 0:
+            participant_cnt[person] -= 1
+
+    answer = ''
+    # 3. vlaue 값이 1이상인 애들의 명단     
+    for k, v in participant_cnt.items():
+        if v > 0:
+            answer = k
+
+    return answer
