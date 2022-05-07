@@ -1,0 +1,24 @@
+#프로그래머스 - 124나라
+def solution(n):
+    '''
+    특이한 3진법
+    (실제)
+    0 : 1
+    1 : 2
+    2 : 4
+    
+    3 : 11
+    4 : 12
+    5 : 14
+    '''
+    answer = ''
+    arr = ['1','2','4']
+    
+    while n > 0:        
+        n = n-1
+        answer = arr[n%3] + answer # answer를 뒤에 붙여서 정방향으로 이어가기 가능
+        n = n//3 
+    return answer
+
+n = 14
+solution(n)
