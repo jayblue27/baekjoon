@@ -1,3 +1,11 @@
+# 강의실 배정
+'''
+S에 시작해서 T에 끝나는 N개의 수업 
+최소의 강의실을 사용해서 모든 수업이 가능해야 함
+
+N : 수업수 (1 <= N <= 200,000)
+S,T : 시작시간, 종료시간
+'''
 import heapq
 import sys
 input = sys.stdin.readline
