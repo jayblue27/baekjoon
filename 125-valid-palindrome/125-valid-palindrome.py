@@ -13,12 +13,12 @@ class Solution:
         '''
         
         new_s = ''
-        
-        # .isalnum() 이용 문장(s) 안의 문자열이 문자 혹은 숫자 인지 확인        
+        # alphanumeric 판별
         for c in s:
             if c.isalnum():
                 new_s += c.lower()
         
+        # 팰린드럼 판별
         if new_s == ''.join(reversed(new_s)):
             return 1
         else:
