@@ -15,5 +15,7 @@ class Solution:
         
         for w in strs:
             anagrams[''.join(sorted(w))].append(w)
+            # anagrams[sorted(w)].append(w)  
+            # list 형태는 key값으로 설정할 수 없나보다, join 없으니까 TypeError 발생
         return anagrams.values()
         
