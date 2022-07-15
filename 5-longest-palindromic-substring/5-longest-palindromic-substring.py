@@ -27,8 +27,8 @@ class Solution:
         res = ''
         
         for i in range(len(s) -1):
-            # res = max(res, expand(i, i+1), expand(i, i+2), key=len)
-            res = max(res, expand(i, i), expand(i, i+1), key=len)
+            res = max(res, expand(i, i+1), expand(i, i+2), key=len)   # 책 풀이
+            # res = max(res, expand(i, i), expand(i, i+1), key=len)       # youtube 풀이 (어떤 차이?)
         
         return res
             
