@@ -17,15 +17,33 @@ class Solution:
 #                 if nums[i] + nums[j] == target:
 #                     return i,j
         
-        # 2) in을 이용한 탐색
-        # (target - n) 값이 nums 안에 있는지 확인
-        for i, n in enumerate(nums):
-            complement = target - n
+#         # 2) in을 이용한 탐색 - 643ms
+#         # (target - n) 값이 nums 안에 있는지 확인
+#         for i, n in enumerate(nums):
+#             complement = target - n
             
-            if complement in nums[i+1:]:
-                return [ nums.index(n), nums[i+1:].index(complement)+(i+1)]
+#             if complement in nums[i+1:]:
+#                 return nums.index(n), nums[i+1:].index(complement)+(i+1)
         
-#         # 3) 첫번째 수를 뺀 결과 키 조회
+        # 3) 첫번째 수를 뺀 결과 키 조회
+        # 전체 리스트의 값을 key로 하는는 딕셔너리 생성        
+        nums_map = {}
+        for i, num in enumerate(nums):
+            nums_map[num] = i
+        
+        for i, num in enumerate(nums):
+            if target - num in nums_map and i != nums_map[target-num]:
+                return i,  nums_map[target-num]
+        
+            
+            
+            
+    
+        
+            
+        
+
+            
 #         nums_map = {}
         
 #         # 4) 
