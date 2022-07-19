@@ -25,15 +25,25 @@ class Solution:
 #             if complement in nums[i+1:]:
 #                 return nums.index(n), nums[i+1:].index(complement)+(i+1)
         
-        # 3) 첫번째 수를 뺀 결과 키 조회
-        # 전체 리스트의 값을 key로 하는는 딕셔너리 생성        
+#         # 3) 첫번째 수를 뺀 결과 키 조회 - 89ms
+#         # 전체 리스트의 값을 key로 하는는 딕셔너리 생성        
+#         nums_map = {}
+#         for i, num in enumerate(nums):
+#             nums_map[num] = i
+        
+#         for i, num in enumerate(nums):
+#             if target - num in nums_map and i != nums_map[target-num]:
+#                 return i,  nums_map[target-num]
+            
+        # 4) 조회 구조 개선
+        # 3번에서 for 2번쓴거 1번으로 줄이기
         nums_map = {}
         for i, num in enumerate(nums):
+            if target - num in nums_map:
+                return nums_map[target-num], i
             nums_map[num] = i
         
-        for i, num in enumerate(nums):
-            if target - num in nums_map and i != nums_map[target-num]:
-                return i,  nums_map[target-num]
+        
         
             
             
