@@ -5,6 +5,7 @@ class Solution:
         nums 숫자 오름차순 정렬하고 
         홀수번째 숫자의 합 더한다.        
         '''
+        # 1) 내 풀이 - 
         # nums 오름차순 정렬
         nums.sort()
         
