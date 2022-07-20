@@ -18,7 +18,8 @@ class Solution:
         
 #         return ans
     
-        # 2) 파이써닉한 풀이(책3번) - 오.. 
+        # 2) 파이써닉한 풀이(책3번) - 오.. - 293ms 
+        # 내가 for로 구현한걸 슬라이싱으로 한줄에 구현함
         return sum(sorted(nums)[::2])
         
         
