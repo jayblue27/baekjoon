@@ -42,10 +42,12 @@ class Solution:
         results = []
         nums.sort()
         
-        for i in range(len(nums)-2):
+        for i in range(len(nums)-2):  
+            # 중복값 생략
             if i > 0 and nums[i] == nums[i-1]:
                 continue
-                
+            
+            # 포인터 지정
             l, r = i+1, len(nums)-1
             while l < r:
                 sum = nums[i] + nums[l] + nums[r]
