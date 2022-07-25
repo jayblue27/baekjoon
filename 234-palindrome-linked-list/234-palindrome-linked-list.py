@@ -44,7 +44,7 @@ class Solution:
 #                 return False
 #         return True 
             
-        # 3. 런너(?) 이용 - 아직 이해가 어렵다. 
+        # 3. 런너(?) 이용 - 694ms, 아직 이해가 어렵다. 
         rev = None # rev?
         slow = fast = head
         # 런너를 이용해 역순 연결 리스트 구성
