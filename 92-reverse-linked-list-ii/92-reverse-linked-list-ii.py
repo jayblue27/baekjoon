@@ -15,7 +15,7 @@ class Solution:
         root = start = ListNode(None)
         root.next = head
         
-        # start, end 지정
+        # start, end 지정 - start 전까지 skip
         for _ in range(left - 1):
             start = start.next
         end = start.next
