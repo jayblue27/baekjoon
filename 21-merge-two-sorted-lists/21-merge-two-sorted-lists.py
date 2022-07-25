@@ -18,7 +18,7 @@ class Solution:
         # q.sort()
         # return q
     
-        # 책 풀이- 재귀
+        # 책 풀이(재귀) - 34ms
         # l1과 l2값을 비교해 작은 값이 왼쪽에 오게 한다.
         if (not list1) or (list2 and list1.val > list2.val):
             list1, list2 = list2, list1
