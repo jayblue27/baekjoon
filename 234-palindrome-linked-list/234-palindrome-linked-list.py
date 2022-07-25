@@ -21,7 +21,7 @@ class Solution:
 #             if q.pop(0) != q.pop():
 #                 return False
         
-        # 2. deque
+        # 2. deque - 1434ms
         q = collections.deque()
         if not head:
             return True
