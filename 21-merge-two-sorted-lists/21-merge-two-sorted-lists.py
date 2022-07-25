@@ -18,20 +18,41 @@ class Solution:
         # q.sort()
         # return q
     
-        # 책 풀이(재귀) - 34ms
-        # l1과 l2값을 비교해 작은 값이 왼쪽에 오게 한다.
-        if (not list1) or (list2 and list1.val > list2.val):
-            list1, list2 = list2, list1
-        # l1 next 를 재귀호출 -> 다음번 연결 리스트가 계속 스왑될 수 있게 한다.
-        if list1:
-            list1.next = self.mergeTwoLists(list1.next, list2)
-        return list1
+        # # 책 풀이(재귀) - 34ms
+        # # l1과 l2값을 비교해 작은 값이 왼쪽에 오게 한다.
+        # if (not list1) or (list2 and list1.val > list2.val):
+        #     list1, list2 = list2, list1
+        # # l1 next 를 재귀호출 -> 다음번 연결 리스트가 계속 스왑될 수 있게 한다.
+        # if list1:
+        #     list1.next = self.mergeTwoLists(list1.next, list2)
+        # return list1
 
         # 질문 사항
         # 이문제는 어떻게 떠올리는지?
         # 연결리스트 문제가 실제 코테에 나오는지?
         # 다른 해결 방법은 없나?
         
+        # 인터넷 검색
+        # 빈노드 생성
+        res = ListNode()
+        node = res
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                node.next = list1
+                list1 = list1.next
+            else:
+                node.next = list2
+                list2 = list2.next
+            node = node.next
+
+        if list1:
+            node.next = list1
+
+        elif list2:
+            node.next = list2
+
+        return res.next        
         
             
             
