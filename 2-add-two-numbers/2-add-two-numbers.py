@@ -51,7 +51,7 @@ class Solution:
 #         # 최종 계산 결과 연결 리스트 변환
 #         return self.toReversedLinkedList(str(resultStr))
         
-    # 풀이 2 - 전가산기
+    # 풀이 2 - 전가산기 - 92ms
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         root = head = ListNode(0)
         
