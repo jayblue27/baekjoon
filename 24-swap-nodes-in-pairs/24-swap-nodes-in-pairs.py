@@ -36,7 +36,7 @@ class Solution:
 #             prev = prev.next.next
 #         return root.next
     
-        # 3. 재귀 구조
+        # 3. 재귀 구조 - 75ms
         if head and head.next:
             p = head.next
             # 스왑된 값 리턴 받음
