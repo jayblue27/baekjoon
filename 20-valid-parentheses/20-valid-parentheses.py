@@ -9,25 +9,38 @@ class Solution:
           - stack에 하나씩 담고 마지막 두개가 brackets안의 형태를 띄면 원소 삭제
           - stack에 남은게 없으면 True, 있으면 False
         '''
-        # 내 풀이 - 44ms
+#         # 내 풀이 - 41-44ms
         
+#         stack = []
+#         brackets = ['()','[]','{}']
+        
+#         # 하나씩 stack에 입력
+#         for c in s:
+#             stack.append(c)
+#             # stack의 마지막 2개가 brackets 안의 형태와 같으면 제거
+#             if ''.join(stack[-2:]) in brackets:
+#                 del stack[-2:]
+        
+#         # 남은 원소 없으면 True / 있으면 False
+#         if stack:
+#             return False
+#         else:
+#             return True
+        
+        # 책 풀이 - 딕셔너리 사용
         stack = []
-        brackets = ['()','[]','{}']
+        table = {
+            ')':'(',
+            '}':'{',
+            ']':'['
+            }
         
-        # 하나씩 stack에 입력
         for c in s:
-            stack.append(c)
-            # stack의 마지막 2개가 brackets 안의 형태와 같으면 제거
-            if ''.join(stack[-2:]) in brackets:
-                del stack[-2:]
-        
-        # 남은 원소 없으면 True / 있으면 False
-        if stack:
-            return False
-        else:
-            return True
-        
-        # 책 풀이 
+            if c not in table:
+                stack.append(c)
+            elif not stack or table[c] != stack.pop():
+                return False
+        return len(stack) == 0
         
             
         
