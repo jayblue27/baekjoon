@@ -6,23 +6,28 @@ class Solution:
         모든 괄호가 정상적으로 열고 닫히면 True / 아니면 False return 
         
         ㅇ 접근방법
-          - stack에 하나씩 담고 다음 괄호랑 짝을 이루면 pop으로 제거
+          - stack에 하나씩 담고 마지막 두개가 brackets안의 형태를 띄면 원소 삭제
           - stack에 남은게 없으면 True, 있으면 False
         '''
+        # 내 풀이 - 44ms
+        
         stack = []
         brackets = ['()','[]','{}']
         
-        stack.append(s[0])
-        
-        for i in range(1,len(s)):
-            stack.append(s[i])
+        # 하나씩 stack에 입력
+        for c in s:
+            stack.append(c)
+            # stack의 마지막 2개가 brackets 안의 형태와 같으면 제거
             if ''.join(stack[-2:]) in brackets:
                 del stack[-2:]
         
+        # 남은 원소 없으면 True / 있으면 False
         if stack:
             return False
         else:
             return True
+        
+        # 책 풀이 
         
             
         
