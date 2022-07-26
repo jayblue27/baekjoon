@@ -9,7 +9,7 @@ class Solution:
           - stack에 하나씩 담고 마지막 두개가 brackets안의 형태를 띄면 원소 삭제
           - stack에 남은게 없으면 True, 있으면 False
         '''
-        # 내 풀이 - 41-44ms
+        # 내 풀이 - 41-44-62ms
         
         stack = []
         brackets = ['()','[]','{}']
