@@ -5,6 +5,7 @@ class Solution:
         매일 온도 temperatures가 주어진다.
         몇일이 지나면 온도가 오르는지 return 하라
         '''
+        # 책 풀이 - 1942ms
         ans = [0] * len(temperatures)   # ans 초기화
         stack = []                      # stack 
         
