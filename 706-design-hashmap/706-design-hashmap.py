@@ -1,4 +1,4 @@
-# discussion 풀이
+# discussion 풀이 - 351ms
 class MyHashMap:
     def __init__(self):
         self.hash=[-1]*(10**5)
