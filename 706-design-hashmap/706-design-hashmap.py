@@ -1,3 +1,4 @@
+# discussion 풀이
 class MyHashMap:
     def __init__(self):
         self.hash=[-1]*(10**5)
@@ -6,10 +7,10 @@ class MyHashMap:
         (self.hash)[(key)%(10**5)]=value
 
     def get(self, key: int) -> int:
-        return (self.hash)[(key)%(10**5)]     
+        return (self.hash)[(key)%(10**5)]
 
     def remove(self, key: int) -> None:
-        (self.hash)[(key)%(10**5)] =-1
+        (self.hash)[(key)%(10**5)] = -1
         
 # # ListNode 없으니까 책 풀이 진행이 안된다. 책풀이로 submit 안 됨
 # class ListNode:
