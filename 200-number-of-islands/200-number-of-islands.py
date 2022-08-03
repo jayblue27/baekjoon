@@ -1,5 +1,6 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+        # 책풀이 - 383ms
         # dfs 함수 생성
         def dfs(i, j):
             # 더 이상 땅이 아닌 경우(1이 아닌경우) 종료
