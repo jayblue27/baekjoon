@@ -2,9 +2,9 @@ class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         '''
         dfs문제
-        조합문제
-        '''
-        #풀이 - 모든 조합 탐색 
+                '''
+        #풀이 - 모든 조합 탐색 - 44ms
+        
         def dfs(index, path):
             # 끝까지 탐색하면 백트래킹
             if len(path) == len(digits):
