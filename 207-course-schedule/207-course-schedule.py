@@ -29,7 +29,7 @@ class Solution:
         
 #         return True
     
-        # 풀이2 : 가지치기 (pruning)
+        # 풀이2 : 가지치기 (pruning) - 169ms
         graph = collections.defaultdict(list)
         # 그래프 구성
         for x,y in prerequisites:
