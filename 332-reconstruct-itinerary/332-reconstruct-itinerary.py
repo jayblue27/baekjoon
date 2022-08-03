@@ -34,7 +34,7 @@ class Solution:
 #         # 다시 뒤집어 어휘 순 결과로
 #         return route[::-1]
     
-        # 풀이 3 - 일정 그래프 반복
+        # 풀이 3 - 일정 그래프 반복 - 120ms
         graph = collections.defaultdict(list)
         # 그래프 순서대로 구성
         for a, b in sorted(tickets):
