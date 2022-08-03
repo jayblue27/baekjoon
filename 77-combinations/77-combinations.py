@@ -17,7 +17,7 @@ class Solution:
 #         dfs([],1,k)
 #         return results
         
-        # 풀이2 : itertools 사용
+        # 풀이2 : itertools 사용 - 127ms
         return list(itertools.combinations(range(1,n+1),k))
             
         
