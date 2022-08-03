@@ -1,47 +1,25 @@
-# class Solution:
-#     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-#         # 책 풀이 - 1031ms (12%)
-#         graph = collections.defaultdict(list)
-#         #그래프 인접 리스트 구성
-#         for u, v, w in times:
-#             graph[u].append((v,w))
-            
-#         # 큐변수: [(소요시간, 정점)]
-#         Q = [(0, k)]
-#         dist = collections.defaultdict(int)
-        
-#         #우선순위 큐 최솟값 기준으로 정점까지 최단 경로 삽입
-#         while Q:
-#             time, node = heapq.heappop(Q)
-#             if node not in dist:
-#                 dist[node] = time
-#                 for v, w in graph[node]:
-#                     alt = time+w
-#                     heapq.heappush(Q,(alt,v))
-                    
-#         #모든 노드의 최단 경로 존재 여부 판별
-#         if len(dist)==n:
-#             return max(dist.values())
-#         return -1
-
 class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:        
-        adj_list = defaultdict(list)
-        
-        for x,y,w in times:
-            adj_list[x].append((w, y))
-        
-        visited=set()
-        heap = [(0, k)]
-        while heap:
-            travel_time, node = heapq.heappop(heap)
-            visited.add(node)
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        # 책 풀이 - 1031ms (12%) (다익스트라 알고리즘)
+        graph = collections.defaultdict(list)
+        #그래프 인접 리스트 구성
+        for u, v, w in times:
+            graph[u].append((v,w))
             
-            if len(visited)==n:
-                return travel_time
-            
-            for time, adjacent_node in adj_list[node]:
-                if adjacent_node not in visited:
-                    heapq.heappush(heap, (travel_time+time, adjacent_node))
-                
-        return -1    
+        # 큐변수: [(소요시간, 정점)]
+        Q = [(0, k)]
+        dist = collections.defaultdict(int)
+        
+        #우선순위 큐 최솟값 기준으로 정점까지 최단 경로 삽입
+        while Q:
+            time, node = heapq.heappop(Q)
+            if node not in dist:
+                dist[node] = time
+                for v, w in graph[node]:
+                    alt = time+w
+                    heapq.heappush(Q,(alt,v))
+                    
+        #모든 노드의 최단 경로 존재 여부 판별
+        if len(dist)==n:
+            return max(dist.values())
+        return -1
