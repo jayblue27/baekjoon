@@ -4,7 +4,7 @@ class Solution:
         prerequisites[i] =  [a, b]   -> a를 듣기 위해서는 반드시 b를 들어야 한다. 
         모든 코스를 
         '''
-        # 위상정렬 - 189ms
+        # 위상정렬 - 133ms - 189ms
         graph = collections.defaultdict(list) # 그래프 초기화
         indegree = [0] * numCourses # 진입차수 초기화 
         ans, q = [], collections.deque() # 우선순위 큐?
