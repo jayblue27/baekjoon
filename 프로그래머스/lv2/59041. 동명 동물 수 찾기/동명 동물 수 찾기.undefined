@@ -1,0 +1,11 @@
+-- 이름
+-- 두번이상 쓰인 이름(HAVING)
+-- 쓰인 횟수 (COUNT)
+-- 이름 순 정렬
+
+-- 코드를 입력하세요
+SELECT ai.NAME, COUNT(ai.NAME)
+FROM ANIMAL_INS as ai
+GROUP BY ai.NAME
+HAVING COUNT(ai.NAME) >= 2
+ORDER BY ai.NAME
