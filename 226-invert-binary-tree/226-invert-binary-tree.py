@@ -26,18 +26,18 @@ class Solution:
         
         return root
     
-        # 풀이 3 - 반복 구조로 DFS
-        stack = collections.deque([root])
+#         # 풀이 3 - 반복 구조로 DFS - 31ms
+#         stack = collections.deque([root])
         
-        while stack:
-            node = stack.pop()
-            # 부모 노드 부터 하향식 스왑
-            if node:
-                node.left, node.right = node.right, node.left
+#         while stack:
+#             node = stack.pop()
+#             # 부모 노드 부터 하향식 스왑
+#             if node:
+#                 node.left, node.right = node.right, node.left
                 
-                stack.append(node.left)
-                stack.append(node.right)
-        return root
+#                 stack.append(node.left)
+#                 stack.append(node.right)
+#         return root
         
 
         
