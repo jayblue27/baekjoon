@@ -12,17 +12,17 @@ class Solution:
             return root
         return None
     
-        # 풀이 2 - 반복 구조로 BFS
-        queue = collections.deque([root])
+#         # 풀이 2 - 반복 구조로 BFS - 36ms
+#         queue = collections.deque([root])
         
-        while queue:
-            node = queue.popleft()
-            #부모 노드부터 하향식 스왑
-            if node:
-                node.left, node.right = node.right, node.left
+#         while queue:
+#             node = queue.popleft()
+#             #부모 노드부터 하향식 스왑
+#             if node:
+#                 node.left, node.right = node.right, node.left
                 
-                queue.append(node.left)
-                quene.append(node.right)
+#                 queue.append(node.left)
+#                 quene.append(node.right)
         
         return root
     
