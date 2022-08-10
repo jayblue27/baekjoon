@@ -21,8 +21,11 @@ class Solution:
             
 #         return heapq.heappop(nums)
     
-        # 풀이 3 - heapq 모듈의 nlargest 이용
-        return heapq.nlargest(k, nums)[-1]
+#         # 풀이 3 - heapq 모듈의 nlargest 이용 - 1010ms
+#         return heapq.nlargest(k, nums)[-1]
+    
+        # 풀이 4 - 정렬을 이용한 풀이
+        return sorted(nums, reverse=True)[k-1]
     
     
         
