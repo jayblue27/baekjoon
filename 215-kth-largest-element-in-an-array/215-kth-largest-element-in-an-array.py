@@ -13,12 +13,16 @@ class Solution:
             
 #         return -heapq.heappop(heap)
     
-        # 풀이 2 - heapq 모듈의 heapify 이용
-        heapq.heapify(nums)
+#         # 풀이 2 - heapq 모듈의 heapify 이용 - 991ms
+#         heapq.heapify(nums)
         
-        for _ in range(len(nums) - k):
-            heapq.heappop(nums)
+#         for _ in range(len(nums) - k):
+#             heapq.heappop(nums)
             
-        return heapq.heappop(nums)
+#         return heapq.heappop(nums)
+    
+        # 풀이 3 - heapq 모듈의 nlargest 이용
+        return heapq.nlargest(k, nums)[-1]
+    
     
         
