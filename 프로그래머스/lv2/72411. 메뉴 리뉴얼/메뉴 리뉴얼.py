@@ -29,6 +29,7 @@ def solution(orders, course):
         for order in orders:
             combi = combinations(sorted(order), num)   # num개 만큼의 조합결과 생성 
             temp += combi # 조합결과(combi, 튜플) temp 리스트에 extend
+        print(temp)
                 
         counter = Counter(temp) # Counter 함수로 조합별 주문횟수 카운팅
         
