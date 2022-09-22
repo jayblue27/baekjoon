@@ -58,6 +58,7 @@ import heapq
 #     return answer
 
 # 플로이드 워셜 전체탐색 
+# 효율성 테스트 133.82ms ~ 1168.50ms 
 '''
 n : 노드의 개수
 s : 출발지점
@@ -67,7 +68,7 @@ farees : [시작노드, 종료노드, 가격]
 '''
 
 import sys
-INF = sys.maxsize
+INF = sys.maxsize 
 
 # 플로이드 워셜 : 모든 노드 간 최단 경로 구성가능
 def floyd(dist, n):
@@ -88,20 +89,26 @@ def solution(n, s, a, b, fares):
         dist[i][i] = 0 # 자기자신은 요금이 0
     
     for edge in fares: 
-        # 방향정보가 없기 때문에 양방향으로 같은 요금을 지정해준다.
+        # 노드의 방향정보가 없기 때문에 양방향으로 같은 요금을 지정해준다.
         dist[edge[0]-1][edge[1]-1] = edge[2] 
         dist[edge[1]-1][edge[0]-1] = edge[2]
-    
-    
+        
     # 플로이드 워셜 알고리즘
     floyd(dist, n)
+    # print(dist)
     
+    # 문제에서는 노드번호가 1부터 시작하기 때문에 
+    # 파이썬 인덱싱 번호에 맞춰 1씩 빼준다. 
     s -= 1
     a -= 1
     b -= 1
+    
     answer = INF # 초기값
     
     for k in range(n):
-        answer = min(answer, dist[s][k] + dist[k][a] + dist[k][b])  # 기존값과, 
+        # dist[s][k] : s(시작노드)에서 k 까지(합승) 요금
+        # dist[k][a] : 합습 종료지점에서 a지점 까지 요금
+        # dist[k][b] : 합습 종료지점에서 b지점 까지 요금
+        answer = min(answer, dist[s][k] + dist[k][a] + dist[k][b])  # 최소값 갱신
     
     return answer
