@@ -12,18 +12,16 @@
 큐
 
 '''
-
-
 from collections import deque
 
 # 시간 초과 
 def solution(queue1, queue2):
     answer = 0
     
-    tmp = queue1 + queue2
+    tmp = queue1 + queue2 # 두 큐를 합쳐서
     
-    max_value = max(tmp)
-    each_target = sum(tmp) // 2
+    max_value = max(tmp) # 최대갑 구하고
+    each_target = sum(tmp) // 2 # 각 합이 
 
     n = len(queue1)
     
@@ -41,6 +39,8 @@ def solution(queue1, queue2):
     while sum1 != sum2 and answer <= 4*n :
         answer += 1        
         
+        # while 안에 함수를 쓰니까 시간이 기하급수적으로 늘어남
+        # sum1 에다가 num을 더하고 빼주는 방식으로 사칙연산 적용시 시간 개선 가능
         if sum1 < sum2:
             num = queue2.popleft()
             sum1 += num
