@@ -28,7 +28,6 @@ vs 안누르는 경우(a에서 b바로 가는 경우)
 
 import sys
 input = sys.stdin.readline
-del input
 
 a,b = map(int, input().split())
 n = int(input())
