@@ -8,51 +8,44 @@
 
 '''
 
-def turn_key(l, key):
-    new_key = [item[:] for item in key]
+def match(arr, key, rot, r, c):
+    n = len(key) # 열쇠의 크기
+    for i in range(n):
+        for j in range(n):
+            # 이부분 제대로 이해 못함 -> 직접 그려보면서 이해
+            if rot == 0:
+                arr[r+i][c+j] += key[i][j]
+            elif rot == 1:
+                arr[r+i][c+j] += key[n-1 -j][i]
+            elif rot == 2:
+                arr[r+i][c+j] += key[n-1 -i][n-1 -j]
+            else:
+                arr[r+i][c+j] += key[j][n-1 -i]
 
-    for i in range(l):
-        for j in range(l):
-            new_key[i][j] = key[l - (j + 1)][i]
-
-    return new_key
-
-
-def check(lock, lock_l):
-    for i in range(lock_l):
-        for j in range(lock_l):
-            if lock[i + lock_l][j + lock_l] != 1:
+def check(arr, offset, n):
+    for i in range(n):
+        for j in range(n):
+            if arr[offset+i][offset+j] != 1:
                 return False
     return True
-
+            
 
 def solution(key, lock):
-    key_l = len(key)
-    lock_l = len(lock)
-    new_lock = [[0] * (lock_l * 3) for _ in range(lock_l * 3)]
-
-    new_len = len(new_lock)
-
-    for i in range(lock_l):
-        for j in range(lock_l):
-            new_lock[i + lock_l][j + lock_l] = lock[i][j]
-
-    for i in range(4):
-        key = turn_key(key_l, key)
-
-        for i in range(new_len - key_l):
-            for j in range(new_len - key_l):
-
-                for k in range(key_l):
-                    for p in range(key_l):
-                        new_lock[i + k][j + p] += key[k][p]
-
-                if check(new_lock, lock_l):
+    offset = len(key) -1
+    
+    # 모든 경우의 수 탐색 (offset 준 행,열 좌표 값 * 회전)
+    # 행 
+    for r in range(offset + len(lock)):
+        for c in range(offset + len(lock)):
+            for rot in range(4):
+                arr = [[0 for _ in range(58)] for _ in range(58)]
+                for i in range(len(lock)):
+                    for j in range(len(lock)):
+                        arr[offset+i][offset+j] = lock[i][j]
+                        
+                match(arr, key, rot, r, c)
+                if check(arr, offset, len(lock)):
                     return True
-
-                else:
-                    for k in range(key_l):
-                        for p in range(key_l):
-                            new_lock[i + k][j + p] -= key[k][p]
-
     return False
+                
+                        
