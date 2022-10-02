@@ -1,22 +1,23 @@
-import sys
-from bisect import bisect_left, bisect_right
+# 암기왕 - 실버4
+'''
+하루동안 본 정수 기억 가능 
 
+N개의 숫자 (1,000,000)
+M개의 질문 (1,000,000)
+'''
+
+import sys
 input = sys.stdin.readline
 
 t = int(input())
-
 for _ in range(t):
-    n = input()
-    n_list = [*map(int, input().split())]
-    m = input()
-    m_list = [*map(int, input().split())]
-
-    # n_list 정렬
-    n_list.sort()
-
-    for i in m_list:        
-        # left와 right가 같은 경우 0, 그 외 1
-        if bisect_left(n_list, i) == bisect_right(n_list, i):
-            print(0)
-        else:
+    n = int(input())
+    nums1 = set(map(int, input().split()))
+    m = int(input())
+    nums2 = list(map(int, input().split()))
+    for num in nums2:
+        if num in nums1:
             print(1)
+        else:
+            print(0)
+
