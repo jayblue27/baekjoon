@@ -1,10 +1,10 @@
 # [level 2] 타겟 넘버 - 43165 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43165?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43165) 
 
 ### 성능 요약
 
-메모리: 10.1 MB, 시간: 2.32 ms
+메모리: 10.2 MB, 시간: 2.28 ms
 
 ### 구분
 
@@ -16,55 +16,55 @@
 
 ### 문제 설명
 
-<p>n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
-<div class="highlight"><pre class="codehilite"><code>-1+1+1+1+1 = 3
+<p style="user-select: auto;">n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다. 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
+<div class="highlight" style="user-select: auto;"><pre class="codehilite" style="user-select: auto;"><code style="user-select: auto;">-1+1+1+1+1 = 3
 +1-1+1+1+1 = 3
 +1+1-1+1+1 = 3
 +1+1+1-1+1 = 3
 +1+1+1+1-1 = 3
 </code></pre></div>
-<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+<p style="user-select: auto;">사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
 
-<h5>제한사항</h5>
+<h5 style="user-select: auto;">제한사항</h5>
 
-<ul>
-<li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
-<li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
-<li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
+<ul style="user-select: auto;">
+<li style="user-select: auto;">주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
+<li style="user-select: auto;">각 숫자는 1 이상 50 이하인 자연수입니다.</li>
+<li style="user-select: auto;">타겟 넘버는 1 이상 1000 이하인 자연수입니다.</li>
 </ul>
 
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>numbers</th>
-<th>target</th>
-<th>return</th>
+<h5 style="user-select: auto;">입출력 예</h5>
+<table class="table" style="user-select: auto;">
+        <thead style="user-select: auto;"><tr style="user-select: auto;">
+<th style="user-select: auto;">numbers</th>
+<th style="user-select: auto;">target</th>
+<th style="user-select: auto;">return</th>
 </tr>
 </thead>
-        <tbody><tr>
-<td>[1, 1, 1, 1, 1]</td>
-<td>3</td>
-<td>5</td>
+        <tbody style="user-select: auto;"><tr style="user-select: auto;">
+<td style="user-select: auto;">[1, 1, 1, 1, 1]</td>
+<td style="user-select: auto;">3</td>
+<td style="user-select: auto;">5</td>
 </tr>
-<tr>
-<td>[4, 1, 2, 1]</td>
-<td>4</td>
-<td>2</td>
+<tr style="user-select: auto;">
+<td style="user-select: auto;">[4, 1, 2, 1]</td>
+<td style="user-select: auto;">4</td>
+<td style="user-select: auto;">2</td>
 </tr>
 </tbody>
       </table>
-<h5>입출력 예 설명</h5>
+<h5 style="user-select: auto;">입출력 예 설명</h5>
 
-<p><strong>입출력 예 #1</strong></p>
+<p style="user-select: auto;"><strong style="user-select: auto;">입출력 예 #1</strong></p>
 
-<p>문제 예시와 같습니다.</p>
+<p style="user-select: auto;">문제 예시와 같습니다.</p>
 
-<p><strong>입출력 예 #2</strong></p>
-<div class="highlight"><pre class="codehilite"><code>+4+1-2+1 = 4
+<p style="user-select: auto;"><strong style="user-select: auto;">입출력 예 #2</strong></p>
+<div class="highlight" style="user-select: auto;"><pre class="codehilite" style="user-select: auto;"><code style="user-select: auto;">+4+1-2+1 = 4
 +4-1+2-1 = 4
 </code></pre></div>
-<ul>
-<li>총 2가지 방법이 있으므로, 2를 return 합니다.</li>
+<ul style="user-select: auto;">
+<li style="user-select: auto;">총 2가지 방법이 있으므로, 2를 return 합니다.</li>
 </ul>
 
 
