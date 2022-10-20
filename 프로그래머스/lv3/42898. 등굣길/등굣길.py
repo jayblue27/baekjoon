@@ -16,7 +16,3 @@ def solution(m, n, puddles):
         
     return maps[-1][-1] % 1000000007
 
-
-
-    
-    
