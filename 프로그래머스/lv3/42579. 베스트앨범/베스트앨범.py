@@ -11,7 +11,6 @@
 '''
 from collections import defaultdict
 
-
 def solution(genres, plays):
     #1. dictionary 생성
     dic1 = defaultdict(int) # 장르별 총 재생 수
@@ -28,10 +27,11 @@ def solution(genres, plays):
     #2번 정렬
     for k in dic2.keys():
         dic2[k].sort(key=lambda x:x[1], reverse=True)
-        
+            
     answer = []
+    
     for tup in dic1: #장르
-        genre=tup[0]
+        genre= tup[0]
         
         for i in range(2):
             if dic2[genre]:
