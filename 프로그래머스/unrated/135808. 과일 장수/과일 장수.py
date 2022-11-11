@@ -18,9 +18,11 @@ score -> 사과들의 점수
 '''
 
 def solution(k, m, score):
-    answer = 0
+    # 내림차순 정렬
     score.sort(reverse=True)
     
+    answer = 0
+    # m-1(첫번째 박스의 가장 작은 값) 부터 m칸씩 건너뛰며 answer에 값 더하기
     for i in range(m-1, len(score), m):
         answer += score[i] * m
     return answer
