@@ -1,0 +1,19 @@
+-- 코드를 입력하세요
+-- 2022년 1월 도서 판매 데이터
+-- 저자별, 카테고리별 매출액(판매량*판매가)
+-- AUTHOR_ID, AUTHOR_NAME, CATEGORY, SALES
+-- 하나의 카테고리에 다른책이 있음
+SELECT
+    a.AUTHOR_ID,
+    a.AUTHOR_NAME,
+    b.CATEGORY,
+    SUM(bs.SALES * b.PRICE)
+FROM BOOK_SALES as bs
+LEFT JOIN BOOK as b
+ON bs.BOOK_ID = b.BOOK_ID
+LEFT JOIN AUTHOR as a
+ON b.AUTHOR_ID = a.AUTHOR_ID
+WHERE DATE_FORMAT(bs.SALES_DATE , '%Y-%m') = '2022-01'
+GROUP BY a.AUTHOR_ID, b.CATEGORY
+ORDER BY a.AUTHOR_ID, b.CATEGORY DESC;
+
