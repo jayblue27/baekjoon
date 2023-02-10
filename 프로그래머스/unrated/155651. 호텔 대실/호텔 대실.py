@@ -1,15 +1,3 @@
-# def solution(book_time):
-#     answer = 0
-#     return answer
-
-
-"""
-- 문제풀이
-부분합(누적합)
-시작시간부터 종료시간까지 1씩 더해준다. 
-log 시간의 max값 return 
-"""
-
 def convert_to_mins(time):
     '''문자형태로 주어진 시간을 분으로 변경'''
     h, m = time.split(":")
@@ -24,11 +12,12 @@ def solution(book_time):
 
     # 2. 모든 시간을 분으로로 변환
     for start, end in book_time:
-        time_start = convert_to_mins(start) # 동영상 재생시간
-        time_end = convert_to_mins(end)   # 공익광고 재생시간
+        time_start = convert_to_mins(start) # 시작 idx
+        time_end = convert_to_mins(end)     # 종료 idx
         
-        for i in range(time_start,time_end+10):
+        # 시작~종료+10분(청소시간) 까지 1씩 증가
+        for i in range(time_start,time_end+10): 
             log_time[i] += 1
 
+    # 최대값 return
     return max(log_time)
-    
