@@ -4,5 +4,5 @@ def solution(s):
     tmp1 = s.split(" ")
     tmp2 = [x.lower().capitalize() for x in tmp1]
     return ' '.join(tmp2)
-    # return tmp1
+    # return tmp2
     
