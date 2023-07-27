@@ -1,7 +1,24 @@
-# itertools 공부 더 해보기
-from itertools import combinations_with_replacement as cr
-n,m = map(int,input().split())
-lst = [i+1 for i in range(n)]
-result = list(cr(lst,m))
-for item in result:
-    print(*item)
+def solution(N, M):
+    res = []
+
+    def backtracking(start):
+        # breakpoint()
+        
+        if len(res) == M:
+            print(' '.join(map(str, res)))
+            return
+
+        # N이 start 부터 시작 (1번과의 차이)
+        for i in range(start, N + 1):
+            res.append(i)
+            backtracking(i)
+            res.pop()
+
+    backtracking(1)
+
+
+
+if __name__ == "__main__":
+    # N, M = 4, 2
+    N, M = map(int, input().split())
+    solution(N, M)
