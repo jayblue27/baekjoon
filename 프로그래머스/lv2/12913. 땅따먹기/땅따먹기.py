@@ -55,7 +55,10 @@
 #             # 이전의 2번째 + 이번의 1번째 > 이전의 1번째 + 이번의 2번째 -> 이번의 값으로 max_idx를 갱신
 #             if 
     
-    
+# 참고 - 54분 소요
+# https://wookcode.tistory.com/109
+# dp로 접근
+# 각자의 자리에 본인 자리를 제외한 이전값의 max값과 더한 값을 갱신
 def solution(land):
     answer = 0
     for i in range(1,len(land)):
@@ -64,4 +67,10 @@ def solution(land):
         land[i][2] += max(land[i-1][0], land[i-1][1], land[i-1][3])
         land[i][3] += max(land[i-1][0], land[i-1][1], land[i-1][2])
     return max(land[-1])
-    
+
+# 위 코드를 좀 더 간단하게 
+# def solution(land):
+#     for i in range(1,len(land)):
+#         for j in range(len(land[0])):
+#             land[i][j] += max(land[i-1][:j] + land[i-1][j+1:])
+#     return max(land[len(land)-1])
